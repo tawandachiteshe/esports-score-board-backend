@@ -25,7 +25,6 @@ public class MatchLoader implements CommandLineRunner {
         if (matchRepository.count() == 0) {
 
             MatchModel match =    MatchModel.builder()
-                    .id(UUID.randomUUID().toString())
                     .gameName("MK 11")
                     .playerOneName("Tapiwa")
                     .playerTwoName("Tatenda")
@@ -36,7 +35,6 @@ public class MatchLoader implements CommandLineRunner {
             matchRepository.save(match);
 
             match =  MatchModel.builder()
-                    .id(UUID.randomUUID().toString())
                     .gameName("MK 11")
                     .playerOneName("Tawanda")
                     .playerTwoName("Tatenda")

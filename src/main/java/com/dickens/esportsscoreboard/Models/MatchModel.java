@@ -10,18 +10,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.util.UUID;
 
-
-
-class ServiceObject {
-    @Id
-    @Type(type = "pg-uuid")
-    private UUID id;
-
-    public ServiceObject() {
-        this.id = UUID.randomUUID();
-    }
-}
-
 @Entity
 @Data
 @AllArgsConstructor
@@ -31,17 +19,8 @@ public class MatchModel extends ServiceObject{
 
     private int scoreLeft;
     private int scoreRight;
-    private String id;
     private String playerOneName;
     private String playerTwoName;
     private String gameName;
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    @Id
-    public String getId() {
-        return id;
-    }
 }

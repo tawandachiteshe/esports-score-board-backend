@@ -24,7 +24,7 @@ public class MatchLoader implements CommandLineRunner {
     private void loadMatches() {
         if (matchRepository.count() == 0) {
 
-            var match =    MatchModel.builder()
+            MatchModel match =    MatchModel.builder()
                     .id(UUID.randomUUID().toString())
                     .gameName("MK 11")
                     .playerOneName("Tapiwa")

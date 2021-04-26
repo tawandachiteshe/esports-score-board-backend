@@ -30,12 +30,12 @@ public class MatchesController {
 
 
     @GetMapping({"/{matchID}"})
-    public ResponseEntity<MatchModel> getTodo(@PathVariable String matchId) {
+    public ResponseEntity<MatchModel> getMatch(@PathVariable String matchId) {
         return new ResponseEntity<>(matchService.getMatchById(matchId), HttpStatus.OK);
     }
 
     @PostMapping
-    public ResponseEntity<MatchModel> saveTodo(@RequestBody MatchModel matchModel) {
+    public ResponseEntity<MatchModel> saveMatch(@RequestBody MatchModel matchModel) {
         MatchModel match = matchService.create(matchModel);
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.add("todo", "/api/v1/todo/" + match.getId().toString());
@@ -51,7 +51,7 @@ public class MatchesController {
 
 
     @DeleteMapping({"/{matchId}"})
-    public ResponseEntity<MatchModel> deleteTodo(@PathVariable("matchId") String matchId) {
+    public ResponseEntity<MatchModel> deleteMatch(@PathVariable("matchId") String matchId) {
         matchService.deleteMatch(matchId);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
